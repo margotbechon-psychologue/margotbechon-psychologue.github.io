@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+<Layout title="Contact" description="Contact et informations pratiques pour prendre rendez-vous avec Margot Bechon, psychologue.">
+  <section class="page-heading"><p class="eyebrow">Contact & informations pratiques</p><h1>Faisons le premier pas.</h1><p>Pour une demande de rendez-vous ou une question sur les consultations.</p></section>
+  <section class="section contact-grid">
+    <div><p class="eyebrow">Coordonnées</p><h2>Me joindre</h2><dl class="contact-details"><div><dt>E-mail</dt><dd>{site.email ? <a href={`mailto:${site.email}`}>{site.email}</a> : 'À venir'}</dd></div><div><dt>Téléphone</dt><dd>{site.phone ? <a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a> : 'À venir'}</dd></div><div><dt>Adresse du cabinet</dt><dd>{site.address || 'À venir'}</dd></div></dl></div>
+    <aside class="booking" id="rendez-vous"><p class="eyebrow">Rendez-vous</p><h2>Un temps pour vous.</h2>{site.bookingUrl ? <><p>Consultez les disponibilités et choisissez un créneau dans l’agenda en ligne.</p><a class="button" href={site.bookingUrl}>Prendre rendez-vous <span aria-hidden="true">↗</span></a></> : <><p>La prise de rendez-vous en ligne sera disponible prochainement.</p><span class="status">Agenda à venir</span></>}</aside>
+  </section>
+</Layout>

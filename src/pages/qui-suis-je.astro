@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+<Layout title="Qui suis-je" description="Présentation de Margot Bechon, psychologue : parcours et approche.">
+  <section class="page-heading"><p class="eyebrow">Faire connaissance</p><h1>Qui suis-je ?</h1><p>Une rencontre commence aussi par savoir à qui l’on s’adresse.</p></section>
+  <section class="section biography">
+    <div class="identity"><span class="monogram" aria-hidden="true">MB</span><h2>{site.name}</h2><p>{site.profession}</p></div>
+    <div class="biography-content"><p class="eyebrow">Présentation</p><h2>Mon parcours</h2><p class="pending">La présentation du parcours, des diplômes et des expériences professionnelles sera ajoutée prochainement.</p><hr /><h2>Mon approche</h2><p class="pending">Cette rubrique précisera les modalités d’accompagnement et les publics accueillis.</p><a class="text-link" href="/contact/">Prendre contact <span aria-hidden="true">↗</span></a></div>
+  </section>
+  <section class="contact-band"><div><p class="eyebrow">Contact</p><h2>Une question avant de se rencontrer ?</h2></div><a class="button" href="/contact/">Me contacter <span aria-hidden="true">↗</span></a></section>
+</Layout>

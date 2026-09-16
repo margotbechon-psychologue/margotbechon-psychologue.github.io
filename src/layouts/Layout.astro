@@ -1,0 +1,34 @@
+---
+import { site } from '../data/site';
+import '../styles/global.css';
+interface Props { title: string; description: string }
+const { title, description } = Astro.props;
+const links = [['/', 'Accueil'], ['/qui-suis-je/', 'Qui suis-je'], ['/contact/', 'Contact']];
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#254d43" />
+    <title>{title} | {site.name}</title>
+  </head>
+  <body>
+    <a class="skip" href="#contenu">Aller au contenu</a>
+    <header class="header">
+      <a class="brand" href="/">{site.name}<span>{site.profession}</span></a>
+      <nav aria-label="Navigation principale">
+        {links.map(([href, label]) => <a href={href} aria-current={currentPath === (href.replace(/\/$/, '') || '/') ? 'page' : undefined}>{label}</a>)}
+      </nav>
+      <a class="button header-booking" href={site.bookingUrl || '/contact/#rendez-vous'}>Prendre rendez-vous <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="contenu"><slot /></main>
+    <footer class="footer">
+      <a class="brand" href="/">{site.name}<span>{site.profession}</span></a>
+      <p>Un espace pour vous, à votre rythme.</p>
+      <a href="/contact/">Contact & informations pratiques <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>
