@@ -18,7 +18,17 @@ npm run build
 npm run preview
 ```
 
-Cloudflare Pages : commande de compilation `npm run build`, dossier de sortie `dist`. Aucun déploiement ni domaine configuré à ce stade.
+### GitHub Pages
+
+Le workflow `.github/workflows/deploy.yml` compile Astro puis publie le dossier généré à chaque push sur `main`.
+
+Dans le dépôt GitHub, ouvrir **Settings → Pages → Build and deployment → Source** et choisir **GitHub Actions**. Le mode **Deploy from a branch** utilise Jekyll et ne peut pas compiler les fichiers Astro.
+
+Après avoir poussé le workflow, suivre son exécution dans l'onglet **Actions**. L'adresse prévue est https://margotbechon-psychologue.github.io/.
+
+### Cloudflare Pages
+
+Alternative pour la suite : commande de compilation `npm run build`, dossier de sortie `dist`. Aucun déploiement Cloudflare ni domaine personnalisé configuré à ce stade. Adapter `site` dans `astro.config.mjs` lors du changement de domaine.
 
 ## Contenu
 
