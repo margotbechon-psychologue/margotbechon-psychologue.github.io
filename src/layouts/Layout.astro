@@ -3,7 +3,13 @@ import { site } from '../data/site';
 import '../styles/global.css';
 interface Props { title: string; description: string }
 const { title, description } = Astro.props;
-const links = [['/', 'Accueil'], ['/qui-suis-je/', 'Qui suis-je'], ['/contact/', 'Contact']];
+const links = [
+  ['/', 'Accueil'],
+  ['/qui-suis-je/', 'Qui suis-je'],
+  ['/bilan-neuropsychologique/', 'Bilan neuropsychologique'],
+  ['/tarifs/', 'Tarifs'],
+  ['/contact/', 'Contact'],
+];
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 <!doctype html>
@@ -22,7 +28,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       <nav aria-label="Navigation principale">
         {links.map(([href, label]) => <a href={href} aria-current={currentPath === (href.replace(/\/$/, '') || '/') ? 'page' : undefined}>{label}</a>)}
       </nav>
-      <a class="button header-booking" href={site.bookingUrl || '/contact/#rendez-vous'}>Prendre rendez-vous <span aria-hidden="true">↗</span></a>
+      <a class="button header-booking" href="/prendre-rendez-vous/" aria-current={currentPath === '/prendre-rendez-vous' ? 'page' : undefined}>Prendre rendez-vous <span aria-hidden="true">↗</span></a>
     </header>
     <main id="contenu"><slot /></main>
     <footer class="footer">

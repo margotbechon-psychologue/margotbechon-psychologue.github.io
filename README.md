@@ -1,6 +1,6 @@
 # Margot Bechon · Psychologue
 
-Site statique Astro avec trois pages : Accueil, Qui suis-je et Contact.
+Site statique Astro : Accueil, Qui suis-je, Bilan neuropsychologique, Tarifs, Contact et Prendre rendez-vous.
 
 ## Développement
 
@@ -32,11 +32,14 @@ Alternative pour la suite : commande de compilation `npm run build`, dossier de 
 
 ## Contenu
 
-- Coordonnées et lien Calendly ou Doctolib : `src/data/site.ts`.
+- Coordonnées : `src/data/site.ts`.
 - Parcours et approche : `src/pages/qui-suis-je.astro`.
+- Présentation du bilan : `src/pages/bilan-neuropsychologique.astro`.
+- Honoraires : `src/pages/tarifs.astro`.
+- Informations de rendez-vous : `src/pages/prendre-rendez-vous.astro`.
 - Confirmer le nom affiché et compléter les informations avant publication.
 
-Sans lien d'agenda, les boutons de rendez-vous mènent à Contact. Aucun formulaire ni suivi statistique n'est activé.
+Les boutons de rendez-vous mènent à la page dédiée. Aucun agenda externe, formulaire de réservation ni suivi statistique n'est activé. Les tarifs et modalités non confirmés restent indiqués comme à venir.
 
 Le visuel `assets/cabinet-psychologue.png` est une illustration générée avec l'outil intégré, pas une photographie du cabinet réel. Prompt utilisé :
 
