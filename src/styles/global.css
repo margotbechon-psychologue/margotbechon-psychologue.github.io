@@ -16,7 +16,7 @@
 }
 .fees > div:first-child { padding-top: 0; }
 .fees dd { margin: 0; color: var(--muted); }
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .header { flex-wrap: wrap; }
   .header nav { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 8px 24px; }
 }

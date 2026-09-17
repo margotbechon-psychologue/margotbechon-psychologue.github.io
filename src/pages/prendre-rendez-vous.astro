@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
 ---
 <Layout title="Prendre rendez-vous" description="Retrouvez les informations concernant la prise de rendez-vous avec Margot Bechon, psychologue.">
   <section class="page-heading">
@@ -7,19 +8,56 @@ import Layout from '../layouts/Layout.astro';
     <h1>Prendre rendez-vous</h1>
     <p>Un premier pas, à votre rythme.</p>
   </section>
-  <section class="section welcome page-content">
-    <div>
-      <p class="eyebrow">Disponibilités</p>
-      <h2>L’agenda sera<br />bientôt disponible.</h2>
-    </div>
-    <div>
-      <p>La réservation en ligne n’est pas encore ouverte. Les modalités de prise de rendez-vous seront précisées prochainement.</p>
-      <p>Retrouvez les informations pratiques et les coordonnées du cabinet sur la page Contact.</p>
-      <a class="text-link" href="/contact/">Voir les informations de contact <span aria-hidden="true">↗</span></a>
-    </div>
-  </section>
+  {site.calendlyUrl ? (
+    <section class="section calendar-section" aria-labelledby="agenda-title">
+      <div class="calendar-intro">
+        <p class="eyebrow">Disponibilités</p>
+        <h2 id="agenda-title">Choisir un rendez-vous</h2>
+        <p>Retrouvez les créneaux disponibles dans l’agenda Calendly.</p>
+        <a class="text-link" href={site.calendlyUrl} target="_blank" rel="noopener noreferrer">
+          Ouvrir Calendly dans un nouvel onglet <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <iframe
+        class="calendar-frame"
+        src={site.calendlyUrl}
+        title={`Prendre rendez-vous avec ${site.name} sur Calendly`}
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </section>
+  ) : (
+    <section class="section welcome page-content">
+      <div>
+        <p class="eyebrow">Disponibilités</p>
+        <h2>L’agenda sera<br />bientôt disponible.</h2>
+      </div>
+      <div>
+        <p>La réservation en ligne n’est pas encore ouverte. Les modalités de prise de rendez-vous seront précisées prochainement.</p>
+        <p>Retrouvez les informations pratiques et les coordonnées du cabinet sur la page Contact.</p>
+        <a class="text-link" href="/contact/">Voir les informations de contact <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  )}
   <section class="contact-band">
     <div><p class="eyebrow">Faire connaissance</p><h2>Avant notre première rencontre.</h2></div>
     <a class="button" href="/qui-suis-je/">Qui suis-je ? <span aria-hidden="true">↗</span></a>
   </section>
 </Layout>
+
+<style>
+  .calendar-intro { margin-bottom: 32px; }
+  .calendar-intro > p:not(.eyebrow) { margin-top: 18px; }
+  .calendar-frame {
+    display: block;
+    width: 100%;
+    height: 850px;
+    border: 0;
+    background: white;
+  }
+  @media (max-width: 700px) {
+    .calendar-section { padding-inline: 0; }
+    .calendar-intro { padding-inline: 6%; }
+    .calendar-frame { height: 1000px; }
+  }
+</style>

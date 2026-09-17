@@ -9,7 +9,9 @@ import { site } from '../data/site';
     <aside class="booking" id="rendez-vous">
       <p class="eyebrow">Rendez-vous</p>
       <h2>Un temps pour vous.</h2>
-      <p>La prise de rendez-vous en ligne sera disponible prochainement.</p>
+      <p>{site.calendlyUrl
+        ? 'Consultez les disponibilités et choisissez votre rendez-vous dans l’agenda en ligne.'
+        : 'La prise de rendez-vous en ligne sera disponible prochainement.'}</p>
       <a class="button" href="/prendre-rendez-vous/">Prendre rendez-vous <span aria-hidden="true">↗</span></a>
     </aside>
   </section>

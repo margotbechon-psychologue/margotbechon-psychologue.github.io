@@ -1,6 +1,6 @@
 # Margot Bechon · Psychologue
 
-Site statique Astro : Accueil, Qui suis-je, Bilan neuropsychologique, Tarifs, Contact et Prendre rendez-vous.
+Site statique Astro : Accueil, Qui suis-je, Bilan neuropsychologique, TCC, Tarifs, Contact et Prendre rendez-vous.
 
 ## Développement
 
@@ -35,11 +35,24 @@ Alternative pour la suite : commande de compilation `npm run build`, dossier de 
 - Coordonnées : `src/data/site.ts`.
 - Parcours et approche : `src/pages/qui-suis-je.astro`.
 - Présentation du bilan : `src/pages/bilan-neuropsychologique.astro`.
+- Présentation des TCC : `src/pages/tcc.astro`. Contenu général fondé sur les explications de l'AFTCC (https://www.aftcc.org/faq-publique et https://www.aftcc.org/les-therapies-comportementales-et-cognitives), à relire et compléter avec les modalités du cabinet.
 - Honoraires : `src/pages/tarifs.astro`.
 - Informations de rendez-vous : `src/pages/prendre-rendez-vous.astro`.
 - Confirmer le nom affiché et compléter les informations avant publication.
 
-Les boutons de rendez-vous mènent à la page dédiée. Aucun agenda externe, formulaire de réservation ni suivi statistique n'est activé. Les tarifs et modalités non confirmés restent indiqués comme à venir.
+Les boutons de rendez-vous mènent à la page dédiée. Les tarifs et modalités non confirmés restent indiqués comme à venir.
+
+## Calendly
+
+La page de rendez-vous affiche un agenda Calendly intégré lorsque `PUBLIC_CALENDLY_URL` contient un lien public de réservation `https://calendly.com/...`. Aucune clé API n'est nécessaire. Sans lien, le message d'attente reste affiché et aucun contenu Calendly n'est chargé.
+
+En local, renseigner cette variable dans `.env` (voir `.env.example`), puis redémarrer Astro. Le lien est public et intégré au HTML lors de la compilation. La réservation, les disponibilités et les confirmations sont gérées par Calendly ; le site ne stocke pas les données du formulaire.
+
+Pour GitHub Pages, définir la variable du dépôt **Settings → Secrets and variables → Actions → Variables → New repository variable**, nommée `PUBLIC_CALENDLY_URL`, puis relancer le workflow. Sur Cloudflare Pages, utiliser la même variable d'environnement de compilation et redéployer.
+
+L'agenda est intégré avec une iframe, sans masquer la bannière de cookies Calendly. Un lien direct reste accessible si l'intégration est bloquée. Documentation : https://calendly.com/help/how-to-embed-calendly-with-an-iframe.
+
+## Visuel
 
 Le visuel `assets/cabinet-psychologue.png` est une illustration générée avec l'outil intégré, pas une photographie du cabinet réel. Prompt utilisé :
 
