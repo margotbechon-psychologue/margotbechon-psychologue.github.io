@@ -1,23 +1,54 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Tarifs" description="Tarifs des consultations et du bilan neuropsychologique : informations à venir.">
+<Layout title="Tarifs" description="Psychothérapies individuelles TCC à 70 euros et bilans neuropsychologiques de 280 à 470 euros. Retrouvez les âges concernés et le nombre de séances.">
   <section class="page-heading">
     <p class="eyebrow">Informations pratiques</p>
     <h1>Tarifs</h1>
-    <p>Les honoraires et les modalités de règlement seront communiqués prochainement.</p>
+    <p>Les honoraires des psychothérapies individuelles et des bilans neuropsychologiques.</p>
   </section>
-  <section class="section welcome page-content">
+  <section class="section tariff-section" aria-labelledby="psychotherapies-title">
     <div>
-      <p class="eyebrow">Honoraires</p>
-      <h2>Les consultations<br />et les bilans</h2>
+      <p class="eyebrow">Accompagnement TCC</p>
+      <h2 id="psychotherapies-title">Psychothérapies individuelles</h2>
     </div>
     <div>
-      <dl class="fees">
-        <div><dt>Consultation de psychologie</dt><dd>À venir</dd></div>
-        <div><dt>Bilan neuropsychologique</dt><dd>À venir</dd></div>
+      <dl class="fees" aria-labelledby="psychotherapies-title">
+        <div>
+          <dt><span class="fee-name">Psychothérapie individuelle adulte TCC</span></dt>
+          <dd>70 €</dd>
+        </div>
+        <div>
+          <dt><span class="fee-name">Psychothérapie individuelle adolescent TCC</span><span class="fee-detail">À partir de 14 ans</span></dt>
+          <dd>70 €</dd>
+        </div>
       </dl>
-      <p class="pending">La durée des rendez-vous et les moyens de paiement acceptés seront précisés ici.</p>
+    </div>
+  </section>
+  <section class="section tariff-section tariff-bilans" aria-labelledby="bilans-title">
+    <div>
+      <p class="eyebrow">Évaluation</p>
+      <h2 id="bilans-title">Bilans neuropsychologiques</h2>
+    </div>
+    <div>
+      <dl class="fees" aria-labelledby="bilans-title">
+        <div>
+          <dt><span class="fee-name">Bilan neuropsychologique complet</span><span class="fee-detail">À partir de 6 ans · 5 séances</span></dt>
+          <dd>470 €</dd>
+        </div>
+        <div>
+          <dt><span class="fee-name">Bilan attentionnel et exécutif</span><span class="fee-detail">À partir de 6 ans · 3 à 4 séances</span></dt>
+          <dd>280 €</dd>
+        </div>
+        <div>
+          <dt><span class="fee-name">Bilan intellectuel</span><span class="fee-detail">À partir de 6 ans · 3 à 4 séances</span></dt>
+          <dd>280 €</dd>
+        </div>
+        <div>
+          <dt><span class="fee-name">Bilan mémoire</span><span class="fee-detail">À partir de 55 ans · 3 à 4 séances</span></dt>
+          <dd>280 €</dd>
+        </div>
+      </dl>
       <a class="text-link" href="/contact/">Une question sur les tarifs ? <span aria-hidden="true">↗</span></a>
     </div>
   </section>
@@ -26,3 +57,28 @@ import Layout from '../layouts/Layout.astro';
     <a class="button" href="/prendre-rendez-vous/">Prendre rendez-vous <span aria-hidden="true">↗</span></a>
   </section>
 </Layout>
+
+<style>
+  .tariff-section {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.5fr);
+    gap: 80px;
+  }
+  .tariff-section > div { min-width: 0; }
+  .tariff-section h2 { overflow-wrap: break-word; hyphens: auto; }
+  .tariff-bilans { border-top: 1px solid var(--line); }
+  .tariff-bilans .eyebrow { color: #855b55; }
+  .fees { margin-bottom: 0; }
+  .fees > div { align-items: baseline; padding-block: 24px; }
+  .fees > div:first-child { padding-top: 0; }
+  .fee-name { font-weight: 600; overflow-wrap: break-word; hyphens: auto; }
+  .fee-detail { display: block; margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .fees dd { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; color: var(--green); white-space: nowrap; }
+  @media (max-width: 800px) {
+    .tariff-section { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 700px) {
+    .fees > div { gap: 16px; }
+    .fees dd { font-size: 24px; }
+  }
+</style>
