@@ -7,17 +7,103 @@ import cabinet from '../../assets/cabinet-psychologue.png';
   <section class="hero">
     <img class="hero-image" src={cabinet.src} width={cabinet.width} height={cabinet.height} alt="" fetchpriority="high" />
     <div class="hero-content">
-      <p class="eyebrow">Psychologie · Écoute · Accompagnement</p>
-      <h1>{site.name}<span>Psychologue</span></h1>
+      <p class="eyebrow">Neuropsychologie · Écoute · Accompagnement</p>
+      <h1>{site.name}<span>Psychologue et Neuropsychologue</span></h1>
       <p class="intro">Un temps pour soi.<br />Un espace pour avancer.</p>
-      <p>Faire le premier pas, poser des mots, prendre le temps de comprendre ce que vous traversez.</p>
       <a class="button" href="/contact/">Prendre contact <span aria-hidden="true">↗</span></a>
     </div>
     <span class="image-caption">Visuel d’illustration</span>
   </section>
-  <section class="section welcome">
-    <div><p class="eyebrow">Bienvenue</p><h2>Chaque démarche<br />commence par une rencontre.</h2></div>
-    <div><p>Que votre demande soit déjà précise ou encore difficile à formuler, le premier échange est l’occasion de faire connaissance et de parler de vos attentes.</p><p>Vous trouverez ici une présentation et les informations pratiques pour prendre contact.</p><a class="text-link" href="/qui-suis-je/">Faire connaissance <span aria-hidden="true">↗</span></a></div>
+  <section class="section home-welcome" aria-labelledby="welcome-title">
+    <div class="welcome-intro">
+      <span class="welcome-rule" aria-hidden="true"></span>
+      <h2 id="welcome-title">Bienvenue</h2>
+      <p class="welcome-question">Vous recherchez une consultation psychologique ou souhaitez réaliser un bilan neuropsychologique ?</p>
+      <p class="welcome-description">Découvrez les différents accompagnements proposés et prenez rendez-vous directement en ligne.</p>
+    </div>
+    <div class="welcome-paths">
+      <a class="welcome-path" href="/tcc/">
+        <span class="path-number" aria-hidden="true">01</span>
+        <span class="path-content">
+          <span class="path-title">Consultations psychologiques</span>
+          <span class="path-description">Thérapies cognitives et comportementales</span>
+        </span>
+        <span class="path-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="welcome-path" href="/bilan-neuropsychologique/">
+        <span class="path-number" aria-hidden="true">02</span>
+        <span class="path-content">
+          <span class="path-title">Bilan neuropsychologique</span>
+          <span class="path-description">Informations et déroulement</span>
+        </span>
+        <span class="path-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <div class="welcome-actions">
+      <a class="button" href="/prendre-rendez-vous/">Prendre rendez-vous <span aria-hidden="true">↗</span></a>
+      <a class="text-link" href="/qui-suis-je/">Faire connaissance <span aria-hidden="true">↗</span></a>
+    </div>
   </section>
   <section class="contact-band"><div><p class="eyebrow">Un premier échange</p><h2>Prenons le temps d’en parler.</h2></div><a class="button" href="/contact/">Me contacter <span aria-hidden="true">↗</span></a></section>
 </Layout>
+
+<style>
+  .home-welcome { padding-block: 76px 80px; }
+  .welcome-intro { max-width: 760px; margin-inline: auto; text-align: center; }
+  .welcome-rule {
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin: 0 auto 24px;
+    background: #b9857b;
+  }
+  .welcome-intro h2 { font-size: 44px; margin-bottom: 24px; }
+  .welcome-question {
+    color: #43564e;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 26px;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+  .welcome-description { max-width: 570px; margin: 20px auto 0; }
+  .welcome-paths {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    margin: 44px 0 36px;
+  }
+  .welcome-path {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr) 24px;
+    align-items: center;
+    gap: 16px;
+    padding: 28px 8px;
+    border-block: 1px solid var(--line);
+    transition: background-color .2s, border-color .2s;
+  }
+  .welcome-path:hover { background: var(--rose); border-color: #b9857b; text-decoration: none; }
+  .path-number { align-self: start; padding-top: 5px; color: #855b55; font-size: 12px; }
+  .path-content { min-width: 0; }
+  .path-title { display: block; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; line-height: 1.3; }
+  .path-description { display: block; margin-top: 9px; color: var(--muted); font-size: 13px; }
+  .path-arrow { color: #855b55; font-size: 24px; text-align: center; }
+  .welcome-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 32px; }
+  .welcome-actions .text-link { margin: 0; }
+  @media (max-width: 800px) {
+    .welcome-paths { grid-template-columns: 1fr; gap: 0; }
+    .welcome-path + .welcome-path { border-top: 0; }
+  }
+  @media (max-width: 700px) {
+    .home-welcome { padding-block: 48px 54px; }
+    .welcome-intro h2 { font-size: 36px; margin-bottom: 20px; }
+    .welcome-question { font-size: 22px; }
+    .welcome-paths { margin-block: 32px; }
+    .welcome-path { grid-template-columns: minmax(0, 1fr) 24px; gap: 12px; padding: 24px 4px; }
+    .path-number { display: none; }
+    .path-title { font-size: 22px; overflow-wrap: break-word; hyphens: auto; }
+    .welcome-actions { flex-direction: column; gap: 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .welcome-path { transition: none; }
+  }
+</style>

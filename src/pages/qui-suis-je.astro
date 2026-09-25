@@ -2,11 +2,97 @@
 import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
 ---
-<Layout title="Qui suis-je" description="Présentation de Margot Bechon, psychologue : parcours et approche.">
-  <section class="page-heading"><p class="eyebrow">Faire connaissance</p><h1>Qui suis-je ?</h1><p>Une rencontre commence aussi par savoir à qui l’on s’adresse.</p></section>
+<Layout title="Qui suis-je" description="Découvrez le parcours de Margot Bechon, psychologue spécialisée en neuropsychologie, et ses formations en psychologie du développement et en TCC.">
+  <section class="page-heading">
+    <p class="eyebrow">Faire connaissance</p>
+    <h1>Qui suis-je ?</h1>
+    <p>Mon parcours et mes formations.</p>
+  </section>
   <section class="section biography">
-    <div class="identity"><span class="monogram" aria-hidden="true">MB</span><h2>{site.name}</h2><p>{site.profession}</p></div>
-    <div class="biography-content"><p class="eyebrow">Présentation</p><h2>Mon parcours</h2><p class="pending">La présentation du parcours, des diplômes et des expériences professionnelles sera ajoutée prochainement.</p><hr /><h2>Mon approche</h2><p class="pending">Cette rubrique précisera les modalités d’accompagnement et les publics accueillis.</p><a class="text-link" href="/contact/">Prendre contact <span aria-hidden="true">↗</span></a></div>
+    <div class="identity">
+      <span class="monogram" aria-hidden="true">MB</span>
+      <h2>{site.name}</h2>
+      <p>Psychologue spécialisée<br />en neuropsychologie</p>
+    </div>
+    <div class="biography-content">
+      <section aria-labelledby="parcours-title">
+        <p class="eyebrow">Présentation</p>
+        <h2 id="parcours-title">Mon parcours</h2>
+        <p class="biography-intro">Je suis Margot Bechon, psychologue spécialisée en neuropsychologie.</p>
+        <p>J’exerce depuis 2020 dans le secteur hospitalier et depuis 2024 en libéral.</p>
+        <p>Mon parcours m’a permis d’acquérir une expérience auprès de publics et de problématiques variés, principalement dans l’accompagnement psychologique, l’évaluation neuropsychologique et la prise en charge des difficultés cognitives, émotionnelles et comportementales.</p>
+        <p>Ma pratique s’appuie sur ma formation en neuropsychologie et en psychologie du développement, ainsi que sur ma formation aux thérapies cognitivo-comportementales (TCC).</p>
+      </section>
+
+      <section class="training" aria-labelledby="universite-title">
+        <p class="eyebrow">Diplôme</p>
+        <h2 id="universite-title">Formation universitaire</h2>
+        <h3>Master de psychologie</h3>
+        <p class="training-specialties">Spécialités Neuropsychologie et Psychologie du développement</p>
+        <p class="training-school">Université Nice Sophia Antipolis · <time datetime="2019">2019</time></p>
+        <p>Cette formation m’a permis d’acquérir des connaissances approfondies dans l’évaluation du fonctionnement cognitif et psychologique, avec une spécialisation dans le développement de l’enfant.</p>
+      </section>
+
+      <section class="training" aria-labelledby="formation-tcc-title">
+        <p class="eyebrow">Approfondissement</p>
+        <h2 id="formation-tcc-title">Formations complémentaires</h2>
+        <ul class="career-list">
+          <li>
+            <h3>Formation aux thérapies cognitivo-comportementales (TCC)</h3>
+            <p class="training-school">Association Française de Thérapie Comportementale et Cognitive (AFTCC) · <time datetime="2020">2020</time>-<time datetime="2023">2023</time></p>
+            <a class="text-link" href="/tcc/">Découvrir les TCC <span aria-hidden="true">↗</span></a>
+          </li>
+          <li>
+            <h3>Prévention du suicide</h3>
+            <p class="training-school">Centre Hospitalier de Plaisir · <time datetime="2021-01">Janvier 2021</time></p>
+          </li>
+          <li>
+            <h3>Entretien motivationnel · Niveau 1</h3>
+            <p class="training-school">Centre Hospitalier de Plaisir · <time datetime="2021-05">Mai 2021</time></p>
+          </li>
+          <li>
+            <h3>Programme Accept Voices</h3>
+            <p class="training-school">Thomas Langlois · <time datetime="2025-06">Juin 2025</time></p>
+            <p>Accompagnement en groupe pour aider les personnes à mieux comprendre et gérer leurs voix.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="training" aria-labelledby="experience-title">
+        <p class="eyebrow">Pratique professionnelle</p>
+        <h2 id="experience-title">Expérience professionnelle</h2>
+        <ul class="career-list">
+          <li>
+            <h3>Psychologue · SMPR et CSAPA</h3>
+            <p class="training-specialties">Service médico-psychologique régional (SMPR) et CSAPA</p>
+            <p class="training-school">Depuis <time datetime="2020-05">mai 2020</time></p>
+            <p>J’exerce depuis 2020 dans le secteur adulte.</p>
+          </li>
+          <li>
+            <h3>Psychologue · EHPAD Les Mosaïques</h3>
+            <p class="training-school">Fondation Diaconesses de Reuilly · Villemoisson-sur-Orge</p>
+          </li>
+        </ul>
+      </section>
+    </div>
   </section>
   <section class="contact-band"><div><p class="eyebrow">Contact</p><h2>Une question avant de se rencontrer ?</h2></div><a class="button" href="/contact/">Me contacter <span aria-hidden="true">↗</span></a></section>
 </Layout>
+
+<style>
+  .biography > div { min-width: 0; }
+  .biography-intro {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 23px;
+    line-height: 1.5;
+    color: var(--green);
+  }
+  .training { margin-top: 40px; padding-top: 36px; border-top: 1px solid var(--line); }
+  .training .eyebrow { color: #855b55; }
+  .training h3 { margin: 0; font-size: 17px; font-weight: 600; line-height: 1.6; }
+  .training-specialties { margin-top: 8px; color: #43564e; }
+  .training-school { margin-top: 12px; font-size: 14px; color: #855b55; }
+  .career-list { list-style: none; margin: 0; padding: 0; }
+  .career-list > li + li { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .biography-content h2, .training h3 { overflow-wrap: break-word; hyphens: auto; }
+</style>
