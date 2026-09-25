@@ -35,7 +35,7 @@ Alternative pour la suite : commande de compilation `npm run build`, dossier de 
 - Coordonnées : `src/data/site.ts`.
 - Parcours et approche : `src/pages/qui-suis-je.astro`.
 - Présentation du bilan : `src/pages/bilan-neuropsychologique.astro`.
-- Présentation des TCC : `src/pages/tcc.astro`. Contenu général fondé sur les explications de l'AFTCC (https://www.aftcc.org/faq-publique et https://www.aftcc.org/les-therapies-comportementales-et-cognitives), à relire et compléter avec les modalités du cabinet.
+- Présentation des TCC : `src/pages/tcc.astro`. Texte fourni pour le cabinet : indications, déroulement des séances, exercices et durée de l'accompagnement.
 - Honoraires : `src/pages/tarifs.astro`.
 - Informations de rendez-vous : `src/pages/prendre-rendez-vous.astro`.
 - Confirmer le nom affiché et compléter les informations avant publication.

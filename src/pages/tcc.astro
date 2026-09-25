@@ -1,55 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="TCC" description="Comprendre les thérapies cognitives et comportementales : leur approche, leurs objectifs et le déroulement général d’un accompagnement.">
+<Layout title="TCC" description="Les thérapies cognitivo-comportementales : dans quelles situations consulter, comment se déroulent les séances et quelle place occupent les exercices au quotidien.">
   <section class="page-heading">
     <p class="eyebrow">Comprendre l’approche</p>
-    <h1>TCC</h1>
-    <p>Les thérapies cognitives et comportementales : mieux comprendre ses réactions et explorer de nouvelles façons d’agir.</p>
+    <h1>Les thérapies cognitivo-comportementales (TCC)</h1>
+    <div class="tcc-intro">
+      <p>Les TCC sont des thérapies structurées et centrées sur les difficultés du quotidien. Elles s’intéressent aux liens entre pensées, émotions et comportements afin de mieux comprendre ce qui entretient certaines difficultés psychologiques.</p>
+      <p>La thérapie repose sur une collaboration active entre le psychologue et le patient, avec des objectifs définis ensemble.</p>
+    </div>
   </section>
 
   <section class="section welcome page-content">
     <div>
-      <p class="eyebrow">De quoi parle-t-on ?</p>
-      <h2>Pensées, émotions<br />et comportements.</h2>
+      <p class="eyebrow">Les indications</p>
+      <h2>Dans quelles situations les TCC peuvent-elles être proposées ?</h2>
     </div>
     <div>
-      <p>Les TCC s’intéressent aux liens entre ce que nous pensons, ce que nous ressentons et la manière dont nous réagissons dans les situations du quotidien.</p>
-      <p>Le travail consiste à repérer ce qui entretient une difficulté, puis à expérimenter progressivement d’autres réponses. Les objectifs sont définis ensemble, avec le thérapeute, en tenant compte des besoins de la personne.</p>
-      <p>Cette approche accorde une place importante à la collaboration et à la mise en pratique entre les séances.</p>
+      <p>Les TCC peuvent notamment aider en cas d’anxiété, de phobies, de phobie sociale, d’attaques de panique, de stress, de dépression, d’addictions, de pensées obsessionnelles, de difficultés d’estime de soi ou de gestion des émotions. Cette liste est non exhaustive.</p>
     </div>
   </section>
 
   <section class="section tcc-process" aria-labelledby="deroulement-title">
-    <p class="eyebrow">Le déroulement général</p>
-    <h2 id="deroulement-title">Avancer étape par étape.</h2>
-    <ol class="tcc-steps">
-      <li>
-        <h3>Comprendre la demande</h3>
-        <p>Les premiers échanges permettent d’explorer les difficultés, leur contexte et leurs répercussions, ainsi que les attentes de la personne.</p>
-      </li>
-      <li>
-        <h3>Définir des objectifs</h3>
-        <p>Le thérapeute et la personne identifient ensemble les changements souhaités et les moyens de travailler dans cette direction.</p>
-      </li>
-      <li>
-        <h3>Expérimenter et ajuster</h3>
-        <p>Des observations ou des exercices peuvent être proposés. Des points réguliers permettent d’évaluer les évolutions et d’adapter le travail.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section class="section welcome page-content tcc-practical">
-    <div>
-      <p class="eyebrow">Au cabinet</p>
-      <h2>Un accompagnement<br />à préciser ensemble.</h2>
+    <p class="eyebrow">L’accompagnement</p>
+    <h2 id="deroulement-title">Comment se déroule une thérapie TCC ?</h2>
+    <p class="process-intro">La thérapie s’adapte à votre situation, à vos difficultés et à vos objectifs. La première consultation permet de faire le point sur votre demande et de définir ensemble les axes de travail.</p>
+    <div class="tcc-steps">
+      <section aria-labelledby="seances-title">
+        <h3 id="seances-title">Les séances suivantes</h3>
+        <p>Au fil des séances, différents outils peuvent être utilisés en fonction de vos besoins, notamment la restructuration cognitive, la cohérence cardiaque ou encore l’exposition. Chaque outil est expliqué en séance afin que vous puissiez comprendre son intérêt et apprendre progressivement à l’utiliser dans votre quotidien.</p>
+      </section>
+      <section aria-labelledby="exercices-title">
+        <h3 id="exercices-title">Des exercices entre les séances</h3>
+        <p>Les TCC accordent une place importante à la mise en pratique dans la vie quotidienne. Des exercices peuvent être proposés entre les séances afin de mettre en application les éléments travaillés ensemble, toujours à votre rythme.</p>
+      </section>
+      <section aria-labelledby="duree-title">
+        <h3 id="duree-title">La durée de la thérapie</h3>
+        <p>La durée de l’accompagnement dépend de vos difficultés, de vos objectifs et de votre évolution. Elle est régulièrement réévaluée afin d’adapter la thérapie à vos besoins.</p>
+      </section>
     </div>
-    <div>
-      <p>Le rythme et la durée d’une thérapie varient selon la situation et les objectifs. Un premier échange permet de discuter de la pertinence de cette approche.</p>
-      <p class="pending">Les publics accueillis et les modalités de consultation en TCC au cabinet seront précisés prochainement.</p>
-      <a class="text-link" href="/tarifs/">Consulter les tarifs <span aria-hidden="true">↗</span></a>
-      <p class="tcc-source">Pour en savoir plus : <a href="https://www.aftcc.org/faq-publique">les réponses de l’AFTCC sur les TCC</a>.</p>
-    </div>
+    <p class="tcc-goal">L’objectif est de vous permettre d’acquérir progressivement des outils que vous pourrez utiliser de façon autonome dans votre quotidien.</p>
+    <a class="text-link" href="/tarifs/">Consulter les tarifs <span aria-hidden="true">↗</span></a>
   </section>
 
   <section class="contact-band">
@@ -59,16 +50,17 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  .tcc-process { border-block: 1px solid var(--line); }
+  .page-heading h1 { max-width: 960px; font-size: 44px; overflow-wrap: break-word; hyphens: auto; }
+  .tcc-intro { max-width: 780px; margin-top: 28px; }
+  .tcc-process { border-top: 1px solid var(--line); }
+  .process-intro { max-width: 780px; margin-top: 24px; }
   .tcc-steps {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 40px;
-    margin: 40px 0 0;
-    padding-left: 24px;
+    margin-top: 40px;
   }
-  .tcc-steps li { padding-left: 8px; }
-  .tcc-steps li::marker { color: #855b55; font-weight: 600; }
+  .tcc-steps > section { min-width: 0; padding-top: 24px; border-top: 1px solid var(--line); }
   .tcc-steps h3 {
     margin: 0 0 16px;
     font-family: Georgia, 'Times New Roman', serif;
@@ -76,9 +68,12 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 400;
     line-height: 1.3;
   }
-  .tcc-source { margin-top: 32px; font-size: 13px; }
-  .tcc-source a { text-decoration: underline; text-underline-offset: 3px; }
+  .tcc-goal { max-width: 780px; margin-top: 44px; padding-left: 24px; border-left: 2px solid #b9857b; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; line-height: 1.5; color: var(--green); }
   @media (max-width: 800px) {
     .tcc-steps { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 700px) {
+    .page-heading h1 { font-size: 32px; }
+    .tcc-goal { font-size: 22px; padding-left: 18px; }
   }
 </style>
