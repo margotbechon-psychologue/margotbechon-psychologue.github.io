@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site';
+import logoUrl from '../../assets/Logo cabinet libéral Version 3.svg?url';
 import '../styles/global.css';
 interface Props { title: string; description: string }
 const { title, description } = Astro.props;
@@ -20,12 +21,16 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#254d43" />
+    <link rel="icon" type="image/svg+xml" href={logoUrl} />
     <title>{title} | {site.name}</title>
   </head>
   <body>
     <a class="skip" href="#contenu">Aller au contenu</a>
     <header class="header">
-      <a class="brand" href="/">{site.name}<span>{site.profession}</span></a>
+      <a class="brand brand-with-logo" href="/" aria-label={`${site.name}, accueil`}>
+        <img class="brand-logo" src={logoUrl} width="64" height="64" alt="" />
+        <div class="brand-copy">{site.name}<span>{site.profession}</span></div>
+      </a>
       <nav aria-label="Navigation principale">
         {links.map(([href, label]) => <a href={href} aria-current={currentPath === (href.replace(/\/$/, '') || '/') ? 'page' : undefined}>{label}</a>)}
       </nav>
@@ -33,7 +38,10 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     </header>
     <main id="contenu"><slot /></main>
     <footer class="footer">
-      <a class="brand" href="/">{site.name}<span>{site.profession}</span></a>
+      <a class="brand brand-with-logo" href="/" aria-label={`${site.name}, accueil`}>
+        <img class="brand-logo" src={logoUrl} width="56" height="56" alt="" loading="lazy" />
+        <div class="brand-copy">{site.name}<span>{site.profession}</span></div>
+      </a>
       <p>Un espace pour vous, à votre rythme.</p>
       <a href="/contact/">Contact & informations pratiques <span aria-hidden="true">↗</span></a>
     </footer>

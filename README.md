@@ -44,13 +44,15 @@ Les boutons de rendez-vous mènent à la page dédiée. Les tarifs et modalités
 
 ## Calendly
 
-La page de rendez-vous affiche l'agenda de consultation psychologique : https://calendly.com/mbechon-neuropsy/consultation-psychologique. Ce lien public est configuré par défaut dans `src/data/site.ts` et ne nécessite aucune clé API. Il concerne les consultations psychologiques, pas la réservation des bilans.
+Les réservations sont temporairement masquées sur le site : `bookingEnabled` vaut `false` dans `src/data/site.ts`. Aucun agenda ni lien Calendly n'est rendu dans les pages, même si `PUBLIC_CALENDLY_URL` est renseigné. La page de rendez-vous affiche le message d'attente.
+
+Pour rouvrir les réservations, passer `bookingEnabled` à `true` puis redéployer. Le lien du cabinet est conservé dans `src/data/site.ts` et concerne les consultations psychologiques, pas les bilans. Aucune clé API n'est nécessaire.
 
 Pour remplacer l'agenda en local, renseigner `PUBLIC_CALENDLY_URL` dans `.env` (voir `.env.example`), puis redémarrer Astro. Une variable absente ou vide conserve le lien du cabinet. Le lien est public et intégré au HTML lors de la compilation. La réservation, les disponibilités et les confirmations sont gérées par Calendly ; le site ne stocke pas les données du formulaire.
 
-Le prochain déploiement GitHub Pages utilisera le lien par défaut, sans réglage supplémentaire. Pour le remplacer, définir la variable du dépôt **Settings → Secrets and variables → Actions → Variables → New repository variable**, nommée `PUBLIC_CALENDLY_URL`, puis relancer le workflow. Sur Cloudflare Pages, utiliser la même variable d'environnement de compilation et redéployer.
+Une fois les réservations réactivées, GitHub Pages utilisera le lien par défaut. Pour le remplacer, définir la variable du dépôt **Settings → Secrets and variables → Actions → Variables → New repository variable**, nommée `PUBLIC_CALENDLY_URL`, puis relancer le workflow. Sur Cloudflare Pages, utiliser la même variable d'environnement de compilation et redéployer.
 
-L'agenda est intégré avec une iframe, sans masquer la bannière de cookies Calendly. Un lien direct reste accessible si l'intégration est bloquée. Documentation : https://calendly.com/help/how-to-embed-calendly-with-an-iframe.
+Quand il est activé, l'agenda est intégré avec une iframe, sans masquer la bannière de cookies Calendly. Un lien direct reste accessible si l'intégration est bloquée. Masquer Calendly sur le site ne désactive pas l'événement sur Calendly : pour empêcher aussi les réservations par un lien déjà partagé, désactiver l'événement depuis le compte Calendly. Documentation : https://calendly.com/help/how-to-embed-calendly-with-an-iframe.
 
 ## Visuel
 

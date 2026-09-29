@@ -19,7 +19,9 @@ import cabinet from '../../assets/cabinet-psychologue.png';
       <span class="welcome-rule" aria-hidden="true"></span>
       <h2 id="welcome-title">Bienvenue</h2>
       <p class="welcome-question">Vous recherchez une consultation psychologique ou souhaitez réaliser un bilan neuropsychologique ?</p>
-      <p class="welcome-description">Découvrez les différents accompagnements proposés et prenez rendez-vous directement en ligne.</p>
+      <p class="welcome-description">{site.calendlyUrl
+        ? 'Découvrez les différents accompagnements proposés et prenez rendez-vous directement en ligne.'
+        : 'Découvrez les différents accompagnements proposés. La prise de rendez-vous en ligne sera disponible prochainement.'}</p>
     </div>
     <div class="welcome-paths">
       <a class="welcome-path" href="/tcc/">

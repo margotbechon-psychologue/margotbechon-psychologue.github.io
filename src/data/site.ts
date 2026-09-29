@@ -1,3 +1,6 @@
+// Passer à true lorsque les réservations pourront être ouvertes au public.
+const bookingEnabled = false;
+
 const calendlyUrl = (import.meta.env.PUBLIC_CALENDLY_URL ?? '').trim()
   || 'https://calendly.com/mbechon-neuropsy/consultation-psychologique';
 
@@ -11,7 +14,7 @@ if (calendlyUrl) {
 export const site = {
   name: 'Margot Bechon',
   profession: 'Psychologue',
-  calendlyUrl,
+  calendlyUrl: bookingEnabled ? calendlyUrl : '',
   // Informations à confirmer avant publication.
   email: '',
   phone: '',
