@@ -44,11 +44,11 @@ Les boutons de rendez-vous mènent à la page dédiée. Les tarifs et modalités
 
 ## Calendly
 
-La page de rendez-vous affiche un agenda Calendly intégré lorsque `PUBLIC_CALENDLY_URL` contient un lien public de réservation `https://calendly.com/...`. Aucune clé API n'est nécessaire. Sans lien, le message d'attente reste affiché et aucun contenu Calendly n'est chargé.
+La page de rendez-vous affiche l'agenda de consultation psychologique : https://calendly.com/mbechon-neuropsy/consultation-psychologique. Ce lien public est configuré par défaut dans `src/data/site.ts` et ne nécessite aucune clé API. Il concerne les consultations psychologiques, pas la réservation des bilans.
 
-En local, renseigner cette variable dans `.env` (voir `.env.example`), puis redémarrer Astro. Le lien est public et intégré au HTML lors de la compilation. La réservation, les disponibilités et les confirmations sont gérées par Calendly ; le site ne stocke pas les données du formulaire.
+Pour remplacer l'agenda en local, renseigner `PUBLIC_CALENDLY_URL` dans `.env` (voir `.env.example`), puis redémarrer Astro. Une variable absente ou vide conserve le lien du cabinet. Le lien est public et intégré au HTML lors de la compilation. La réservation, les disponibilités et les confirmations sont gérées par Calendly ; le site ne stocke pas les données du formulaire.
 
-Pour GitHub Pages, définir la variable du dépôt **Settings → Secrets and variables → Actions → Variables → New repository variable**, nommée `PUBLIC_CALENDLY_URL`, puis relancer le workflow. Sur Cloudflare Pages, utiliser la même variable d'environnement de compilation et redéployer.
+Le prochain déploiement GitHub Pages utilisera le lien par défaut, sans réglage supplémentaire. Pour le remplacer, définir la variable du dépôt **Settings → Secrets and variables → Actions → Variables → New repository variable**, nommée `PUBLIC_CALENDLY_URL`, puis relancer le workflow. Sur Cloudflare Pages, utiliser la même variable d'environnement de compilation et redéployer.
 
 L'agenda est intégré avec une iframe, sans masquer la bannière de cookies Calendly. Un lien direct reste accessible si l'intégration est bloquée. Documentation : https://calendly.com/help/how-to-embed-calendly-with-an-iframe.
 

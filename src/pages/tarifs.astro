@@ -52,6 +52,27 @@ import Layout from '../layouts/Layout.astro';
       <a class="text-link" href="/contact/">Une question sur les tarifs ? <span aria-hidden="true">↗</span></a>
     </div>
   </section>
+  <section class="section tariff-section tariff-practical" id="informations-pratiques" aria-labelledby="practical-title">
+    <div>
+      <p class="eyebrow">Au cabinet</p>
+      <h2 id="practical-title">Informations pratiques</h2>
+    </div>
+    <div class="practical-content">
+      <section aria-labelledby="paiement-title">
+        <h3 id="paiement-title">Modalités de paiement</h3>
+        <p>Les consultations sont réglées directement à l’issue de la séance, <strong>par chèque ou en espèces</strong>. Une facture vous sera ensuite remise ou envoyée par voie électronique.</p>
+      </section>
+      <section aria-labelledby="remboursement-title">
+        <h3 id="remboursement-title">Remboursement des consultations</h3>
+        <p>Les consultations de psychologie proposées au cabinet ne sont pas prises en charge par l’Assurance Maladie. Toutefois, certaines complémentaires santé proposent une prise en charge partielle des séances de psychologie. Je vous invite à vous rapprocher de votre mutuelle afin de connaître les éventuelles modalités de remboursement dont vous pouvez bénéficier.</p>
+      </section>
+      <section aria-labelledby="annulations-title">
+        <h3 id="annulations-title">Retards et annulations</h3>
+        <p>En cas de retard, la durée de la séance sera réduite d’autant afin de respecter l’horaire du rendez-vous suivant. Le tarif de la consultation restera inchangé.</p>
+        <p>En cas d’annulation ou de demande de déplacement d’un rendez-vous, je vous remercie de me prévenir <strong>au minimum 48 heures à l’avance</strong>. En dessous de ce délai, et quelle qu’en soit la raison, la consultation sera due et pourra être facturée.</p>
+      </section>
+    </div>
+  </section>
   <section class="contact-band">
     <div><p class="eyebrow">Rendez-vous</p><h2>Un temps pour vous.</h2></div>
     <a class="button" href="/prendre-rendez-vous/">Prendre rendez-vous <span aria-hidden="true">↗</span></a>
@@ -68,6 +89,17 @@ import Layout from '../layouts/Layout.astro';
   .tariff-section h2 { overflow-wrap: break-word; hyphens: auto; }
   .tariff-bilans { border-top: 1px solid var(--line); }
   .tariff-bilans .eyebrow { color: #855b55; }
+  .tariff-practical { border-top: 1px solid var(--line); scroll-margin-top: 24px; }
+  .practical-content > section + section { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--line); }
+  .practical-content h3 {
+    margin: 0 0 16px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
   .fees { margin-bottom: 0; }
   .fees > div { align-items: baseline; padding-block: 24px; }
   .fees > div:first-child { padding-top: 0; }

@@ -1,4 +1,5 @@
-const calendlyUrl = (import.meta.env.PUBLIC_CALENDLY_URL ?? '').trim();
+const calendlyUrl = (import.meta.env.PUBLIC_CALENDLY_URL ?? '').trim()
+  || 'https://calendly.com/mbechon-neuropsy/consultation-psychologique';
 
 if (calendlyUrl) {
   const url = new URL(calendlyUrl);

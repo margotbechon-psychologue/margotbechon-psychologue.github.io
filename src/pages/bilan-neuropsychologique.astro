@@ -1,25 +1,82 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Bilan neuropsychologique" description="Informations sur le bilan neuropsychologique et les modalités de prise de contact avec Margot Bechon.">
+<Layout title="Bilan neuropsychologique" description="Découvrez le bilan neuropsychologique : fonctions cognitives évaluées, entretien, tests, analyse des résultats et restitution avec un compte rendu écrit.">
   <section class="page-heading">
     <p class="eyebrow">Bilan neuropsychologique</p>
-    <h1>Mieux comprendre.</h1>
-    <p>Un premier échange pour parler de votre demande et de vos attentes.</p>
+    <h1>Qu’est-ce qu’un bilan neuropsychologique ?</h1>
+    <div class="bilan-intro">
+      <p>Le bilan neuropsychologique est une évaluation approfondie des différentes fonctions cognitives, telles que la mémoire, l’attention, les fonctions exécutives, le langage, les praxies ou encore les gnosies.</p>
+      <p>Il permet d’identifier d’éventuelles difficultés cognitives, d’en préciser la nature et le profil, et peut contribuer à l’orientation d’un diagnostic. Il permet également de mieux comprendre le retentissement de ces difficultés dans la vie quotidienne et d’identifier, lorsque cela est nécessaire, des pistes d’accompagnement adaptées.</p>
+    </div>
   </section>
-  <section class="section welcome page-content">
-    <div>
-      <p class="eyebrow">Présentation</p>
-      <h2>Le bilan<br />neuropsychologique</h2>
-    </div>
-    <div>
-      <p>Vous souhaitez vous renseigner sur un bilan neuropsychologique ? Vous pouvez retrouver les coordonnées du cabinet sur la page Contact.</p>
-      <p class="pending">Les informations sur les publics accueillis, le déroulement du bilan et ses modalités seront précisées prochainement.</p>
-      <a class="text-link" href="/tarifs/">Consulter les tarifs <span aria-hidden="true">↗</span></a>
-    </div>
+  <section class="section bilan-process" aria-labelledby="bilan-etapes-title">
+    <p class="eyebrow">Le déroulement</p>
+    <h2 id="bilan-etapes-title">Le bilan neuropsychologique s’effectue en quatre étapes :</h2>
+    <ol class="bilan-steps">
+      <li>
+        <h3>L’entretien anamnestique</h3>
+        <p>Cette première rencontre permet de faire connaissance avec le patient et, lorsque cela est nécessaire, avec ses proches, notamment dans le cadre d’un bilan chez l’enfant. Elle vise à recueillir les informations nécessaires à la compréhension de la demande : l’histoire de vie, le parcours scolaire ou professionnel, les antécédents pertinents ainsi que les difficultés rencontrées au quotidien.</p>
+      </li>
+      <li>
+        <h3>La passation des outils psychométriques</h3>
+        <p>Cette étape consiste à proposer différents tests et outils psychométriques permettant d’évaluer les fonctions cognitives ciblées. Les outils utilisés sont standardisés et validés scientifiquement, et sont sélectionnés en fonction de la demande, de l’âge du patient et des difficultés rapportées.</p>
+      </li>
+      <li>
+        <h3>L’analyse des résultats</h3>
+        <p>Les résultats obtenus aux différents outils psychométriques sont ensuite analysés et mis en perspective avec les éléments recueillis lors de l’entretien. Cette analyse permet d’identifier les forces et les fragilités cognitives et de dégager le profil cognitif du patient.</p>
+      </li>
+      <li>
+        <h3>La restitution et les recommandations</h3>
+        <p>Une séance de restitution permet de présenter et d’expliquer les résultats du bilan au patient. Les conclusions sont mises en lien avec les difficultés rencontrées au quotidien et peuvent donner lieu à des propositions de prise en charge ainsi qu’à des recommandations personnalisées, adaptées à la vie quotidienne, scolaire ou professionnelle.</p>
+      </li>
+    </ol>
+    <p class="bilan-report">À l’issue du bilan, un compte rendu écrit détaillé au format PDF est remis au patient.</p>
+    <a class="text-link" href="/tarifs/">Consulter les tarifs <span aria-hidden="true">↗</span></a>
   </section>
   <section class="contact-band">
     <div><p class="eyebrow">Un premier contact</p><h2>Parlons de votre demande.</h2></div>
     <a class="button" href="/prendre-rendez-vous/">Prendre rendez-vous <span aria-hidden="true">↗</span></a>
   </section>
 </Layout>
+
+<style>
+  .page-heading h1 { max-width: 960px; font-size: 44px; overflow-wrap: break-word; hyphens: auto; }
+  .bilan-intro { max-width: 780px; margin-top: 28px; }
+  .bilan-process h2 { max-width: 800px; }
+  .bilan-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 64px;
+    margin: 40px 0 0;
+    padding-left: 24px;
+  }
+  .bilan-steps li { min-width: 0; padding: 24px 0 0 8px; border-top: 1px solid var(--line); }
+  .bilan-steps li::marker { color: #855b55; font-weight: 600; }
+  .bilan-steps h3 {
+    margin: 0 0 16px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+  .bilan-report {
+    max-width: 780px;
+    margin-top: 44px;
+    padding-left: 24px;
+    border-left: 2px solid #b9857b;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    line-height: 1.5;
+    color: var(--green);
+  }
+  @media (max-width: 800px) {
+    .bilan-steps { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 700px) {
+    .page-heading h1 { font-size: 32px; }
+    .bilan-report { font-size: 22px; padding-left: 18px; }
+  }
+</style>
